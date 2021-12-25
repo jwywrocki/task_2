@@ -1,0 +1,100 @@
+:root {
+    --white: #f5f5f5;
+    --bg: #272727;
+    --mainColor: #FF652F;
+    --secondaryColor: #FFE400;
+    --tertiaryColor: #14A76C;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    background-color: var(--bg);
+}
+body {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'Spartan', sans-serif;
+    color: var(--tertiaryColor);
+}
+.formWrapper {
+    display: flex;
+    flex-direction: row;
+    flex: .3;
+    text-align: center;
+    align-self: center;
+}
+.formWrapper form {
+    width: 100%;
+}
+.formWrapper fieldset {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-color: var(--tertiaryColor);
+}
+.formWrapper input, .formWrapper select, .formWrapper option {
+    padding: 15px;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 900;
+}
+.formWrapper option { color: var(--bg); }
+::placeholder {color: var(--bg); opacity: .8;}
+.outputWrapper {
+    display: flex;
+    flex: 1;
+}
+.table {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.table thead {
+    background: var(--tertiaryColor);
+    color: var(--bg);
+}
+.table thead tr,
+.table tbody tr {
+    display: flex;
+}
+.table tbody tr+tr {
+    border-top: 1px solid var(--tertiaryColor);
+}
+.table thead tr th,
+.table tbody tr td {
+    display: flex;
+    flex: 1;
+    padding: 10px;
+}
+.button {
+    align-self: center;
+    background-color: var(--bg);
+    min-width: 150px;
+    padding: 20px;
+    border: 1px solid var(--tertiaryColor);
+    text-decoration: none;
+    font-family:'Spartan', sans-serif;
+    color:var(--tertiaryColor);
+    font-size: 20px;
+    text-align:center;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.button:hover {
+    color:var(--white);
+    background-color:var(--tertiaryColor);
+}
+@media (max-width: 750px) {
+    body {
+        flex-direction: column;
+    }
+    .formWrapper {
+        align-self: stretch;
+    }
+}
