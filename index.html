@@ -1,47 +1,74 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@200&display=swap" rel="stylesheet">
-    <title>Task 2</title>
-</head>
-<body>
-    <div class="formWrapper">
-        <form id="form" name="form">
-            <fieldset>
-                <legend>Add book</legend>
-                <input type="text" name="title" id="title" placeholder="Book title" minlength="1" required>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="main.js"></script>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Spartan:wght@200&display=swap"
+            rel="stylesheet"
+        />
+        <title>Task 2</title>
+    </head>
+    <body class="content">
+        <div class="formWrapper">
+            <form id="form" name="form">
+                <fieldset>
+                    <legend>Add book</legend>
+                    <input
+                        type="text"
+                        name="title"
+                        id="title"
+                        placeholder="Book title"
+                        minlength="1"
+                        required
+                    />
 
-                <input type="text" name="author" id="author" placeholder="Book author" minlength="3" required>
+                    <input
+                        type="text"
+                        name="author"
+                        id="author"
+                        placeholder="Book author"
+                        minlength="3"
+                        required
+                    />
 
-                <input type="number" name="priority" id="priority" placeholder="Read priority" min="1" max="5" required>
+                    <input
+                        type="number"
+                        name="priority"
+                        id="priority"
+                        placeholder="Read priority"
+                        min="1"
+                        max="5"
+                        required
+                    />
 
-                <select id="category" required>
-                    <option value = "-1" selected>[Select category]</option>
-                    <option>Fantasy</option>
-                    <option>Astronomy</option>
-                    <option>History</option>
-                </select>
-                <button class="button" id="button" type="button">Send</button>
-            </fieldset>
-        </form>
-    </div>
-    <div class="outputWrapper">
-        <table class="table">
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Priority</th>
-                <th>Category</th>
-              </tr>
-            </thead>
-            <tbody id="books"></tbody>
-          </table>
-    </div>
-</body>
+                    <select id="category" required>
+                        <option value="-1" selected>[Select category]</option>
+                        <option>Fantasy</option>
+                        <option>Astronomy</option>
+                        <option>History</option>
+                    </select>
+                    <button class="button" id="button" type="button">
+                        Send
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="outputWrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Priority</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody id="books"></tbody>
+            </table>
+        </div>
+    </body>
 </html>

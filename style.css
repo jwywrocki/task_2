@@ -1,30 +1,38 @@
 :root {
-    --white: #f5f5f5;
-    --bg: #272727;
-    --mainColor: #FF652F;
-    --secondaryColor: #FFE400;
-    --tertiaryColor: #14A76C;
+    --bright: #f5f5f5;
+    --dark: #05090c;
+    --backgroundColor: #0b1218;
+    --darkBackgroundColor: #090f14;
+    --primaryColor: #00efff;
+    --contentPadding: 1rem min(5vw, 10rem);
+    --contentHorizontalMargin: 0 min(10vw, 10rem);
+    --contentVerticalPadding: min(10vw, 10rem) 0;
 }
-html, body {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    height: 100vh;
     box-sizing: border-box;
-    background-color: var(--bg);
 }
-body {
+html {
+    font-size: clamp(0.7rem, 3vw, 1.5rem);
+}
+.content {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    padding: 20px;
-    font-size: 20px;
-    font-family: 'Spartan', sans-serif;
-    color: var(--tertiaryColor);
+    padding: var(--contentPadding);
+    height: 100vh;
+    background-color: var(--backgroundColor);
+    font-size: 1rem;
+    font-family: "Spartan", sans-serif;
+    color: var(--primaryColor);
 }
 .formWrapper {
     display: flex;
     flex-direction: row;
-    flex: .3;
+    flex: 0.3;
     text-align: center;
     align-self: center;
 }
@@ -35,17 +43,24 @@ body {
     display: flex;
     flex: 1;
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    border-color: var(--tertiaryColor);
+    gap: 1.5rem;
+    padding: 1.2rem;
+    border-color: var(--primaryColor);
 }
-.formWrapper input, .formWrapper select, .formWrapper option {
-    padding: 15px;
-    font-family: 'Spartan', sans-serif;
+.formWrapper input,
+.formWrapper select,
+.formWrapper option {
+    padding: 0.9rem;
+    font-family: "Spartan", sans-serif;
     font-weight: 900;
 }
-.formWrapper option { color: var(--bg); }
-::placeholder {color: var(--bg); opacity: .8;}
+.formWrapper option {
+    color: var(--backgroundColor);
+}
+::placeholder {
+    color: var(--backgroundColor);
+    opacity: 0.8;
+}
 .outputWrapper {
     display: flex;
     flex: 1;
@@ -56,42 +71,53 @@ body {
     flex: 1;
 }
 .table thead {
-    background: var(--tertiaryColor);
-    color: var(--bg);
+    background: var(--primaryColor);
+    color: var(--backgroundColor);
 }
 .table thead tr,
 .table tbody tr {
     display: flex;
 }
-.table tbody tr+tr {
-    border-top: 1px solid var(--tertiaryColor);
+.table tbody tr + tr {
+    border-top: 1px solid var(--primaryColor);
 }
 .table thead tr th,
 .table tbody tr td {
     display: flex;
     flex: 1;
-    padding: 10px;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.table thead tr th:nth-child(3),
+.table tbody tr td:nth-child(3) {
+    max-width: 2rem;
 }
 .button {
     align-self: center;
-    background-color: var(--bg);
-    min-width: 150px;
-    padding: 20px;
-    border: 1px solid var(--tertiaryColor);
+    background-color: var(--backgroundColor);
+    min-width: 10rem;
+    padding: 1rem;
+    border: 1px solid var(--primaryColor);
     text-decoration: none;
-    font-family:'Spartan', sans-serif;
-    color:var(--tertiaryColor);
-    font-size: 20px;
-    text-align:center;
+    font-family: "Spartan", sans-serif;
+    color: var(--primaryColor);
+    font-size: 1.2rem;
+    text-align: center;
     transition: all 0.4s;
     cursor: pointer;
 }
 .button:hover {
-    color:var(--white);
-    background-color:var(--tertiaryColor);
+    color: var(--dark);
+    background-color: var(--primaryColor);
 }
-@media (max-width: 750px) {
-    body {
+@media (min-width: 1280px) {
+    .content {
+        margin: var(--contentHorizontalMargin);
+    }
+}
+@media (max-width: 1000px) {
+    .content {
         flex-direction: column;
     }
     .formWrapper {
