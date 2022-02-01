@@ -21,7 +21,7 @@ html {
 .content {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 1rem;
     padding: var(--contentPadding);
     height: 100vh;
     background-color: var(--backgroundColor);
