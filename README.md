@@ -1,6 +1,6 @@
 ![Book List](https://github.com/jwywrocki/portfolio/blob/main/img/projects/task_2.png?raw=true)
 
-# JS Arrays
+# Book List
 
 ## Introduction
 
