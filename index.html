@@ -10,19 +10,23 @@
             href="https://fonts.googleapis.com/css2?family=Spartan:wght@200&display=swap"
             rel="stylesheet"
         />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        />
         <title>Book List</title>
     </head>
-    <body class="content">
-        <div class="formWrapper">
+    <body class="wrapper">
+        <div class="wrapper__form">
             <form id="form" name="form">
                 <fieldset>
-                    <legend>Add book</legend>
                     <input
                         type="text"
                         name="title"
                         id="title"
                         placeholder="Book title"
                         minlength="1"
+                        autocomplete="off"
                         required
                     />
 
@@ -32,6 +36,7 @@
                         id="author"
                         placeholder="Book author"
                         minlength="3"
+                        autocomplete="off"
                         required
                     />
 
@@ -42,6 +47,7 @@
                         placeholder="Read priority"
                         min="1"
                         max="5"
+                        autocomplete="off"
                         required
                     />
 
@@ -51,24 +57,14 @@
                         <option>Astronomy</option>
                         <option>History</option>
                     </select>
-                    <button class="button" id="button" type="button">
-                        Add
-                    </button>
+                    <button class="button button--add" type="button">Add</button>
                 </fieldset>
             </form>
         </div>
-        <div class="outputWrapper">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Priority</th>
-                        <th>Category</th>
-                    </tr>
-                </thead>
-                <tbody id="books"></tbody>
-            </table>
+        <div id="books" class="wrapper__books-list wrapper__books-list--hidden">
+            <header class="books__list books__list--header">
+                <span>Title</span> <span>Author</span> <span>Priority</span> <span>Category</span>
+            </header>
         </div>
     </body>
 </html>
